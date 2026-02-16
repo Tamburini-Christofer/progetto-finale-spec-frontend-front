@@ -1,0 +1,22 @@
+.titleHome{
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    width: 600px;
+}
+
+.titleHome h1{
+  color: rgb(255, 255, 255);
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;
+  text-align: end;
+  letter-spacing: 10px;
+  line-height: 110px;
+}
+
+video{
+    width: 100%;
+    opacity: 0.8;
+}

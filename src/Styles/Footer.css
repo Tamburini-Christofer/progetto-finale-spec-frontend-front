@@ -1,0 +1,75 @@
+/*! Footer */
+
+/*? Contenitore Footer */
+.contenitoreFooter{ 
+    background: linear-gradient(180deg, rgba(6, 6, 8, 0.6), rgba(6, 6, 8, 0.9));
+    backdrop-filter: blur(6px) saturate(110%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top:91.5vh;
+    left: 0;
+    right: 0;
+    
+    padding: 0 20px;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+    z-index: 9999;
+
+    height: 80px;
+
+    font-size: 30px;
+}
+
+
+.linkFooter ul{ 
+    display: flex;
+    gap: 28px;
+}
+
+.linkFooter li{
+    display: inline;
+    vertical-align: center;
+
+    font-size: 14px;
+    
+    margin: 0 20px;
+}
+
+.linkFooter li a {
+    color: white;
+    text-decoration: none;
+}
+
+.linkFooter li a:hover{
+    color: gold;
+}
+
+.contenitoreFooter p{
+    color: rgb(179, 179, 179);
+    font-size: 14px;
+}
+
+/*? Icon Social Footer */
+.iconSocial{
+
+    display: flex;
+    gap: 20px;
+
+    padding: 0 30px;  
+
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.iconSocial li a i{
+    color: white;
+}
+
+.iconSocial li a i:hover{
+    color: gold;
+}
