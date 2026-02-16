@@ -1,5 +1,5 @@
 //! Importazione dipendenze
-import { Router, Routes, Route } from "react-router-dom"
+import {  BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 //! Importazione Layout principale
 import Layout from "./Layout/Layout"
@@ -10,6 +10,9 @@ import ListaFilm from "./Pages/ListaFilm"
 import Dettagli from "./Pages/Dettagli"
 import Preferiti from "./Pages/Preferiti"
 import PaginaNotFound from "./Pages/PaginaNotFound"
+
+//! Importazione stili 
+import "./Styles/NavBar.css"
 
 //! Definizione componente App principale e le relative rotte
 export default function App() {

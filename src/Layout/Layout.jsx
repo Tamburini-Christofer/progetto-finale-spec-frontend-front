@@ -2,7 +2,7 @@
 import { Outlet } from "react-router-dom"
 
 //! Importazione componenti
-import Navbar from "../Components/NavBar";
+import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 
 //! Creazione Layout
@@ -10,8 +10,8 @@ export default function Layout () {
     return (
         <>
             <header>
-                <nav>
-                    <Navbar />
+                <nav className="contenitoreNavBar">
+                    <NavBar />
                 </nav>
             </header>
             <main>

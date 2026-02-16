@@ -1,6 +1,7 @@
-export default function Dettagli () {
+export default function Footer () {
     return (
         <>
+        
         </>
     )
 }
