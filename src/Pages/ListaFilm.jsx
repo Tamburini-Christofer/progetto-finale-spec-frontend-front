@@ -23,7 +23,7 @@ export default function ListaFilm() {
 
       <div className="contenitoreFilm">
         {films.map((film, index) => (
-          <Card key={index} films={film} id={index} />
+          <Card key={index} films={film} id={index+1} />
         ))}
       </div>
     </div>

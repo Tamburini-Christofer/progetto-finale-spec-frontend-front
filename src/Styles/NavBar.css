@@ -15,6 +15,7 @@ body{
 }
 
 .listaNavBar li {
+    color: white;
     background-color: transparent;
     list-style-type: none;
     margin-bottom: 80px;
@@ -25,12 +26,27 @@ body{
     text-decoration: none;
 }
 
-.listaNavBar li a:hover{
-    color: gold;
-}
-
 .active-link{
     color: rgb(255, 183, 0);
-    font-weight: bolder;
+    font-weight: bold;
 }
 
+.notActive-link{
+    color: white;
+}
+
+.heartBadge{
+    background: rgb(255, 174, 0);
+    color: #000000;  
+    font-size: 14px;
+    font-weight: 700;
+  
+    position: absolute;
+    top: 10%;
+    right: 11rem;
+   
+    padding: 2px 6px;
+
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+}

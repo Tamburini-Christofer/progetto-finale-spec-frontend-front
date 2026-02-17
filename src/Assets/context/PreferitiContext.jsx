@@ -2,10 +2,9 @@ import { useState, useEffect, createContext, useContext } from "react";
 
 export const preferitiContext = createContext(null);
 
-const STORAGE_KEY = "preferiti_games";
+const STORAGE_KEY = "preferiti_films";
 
 export default function PreferitiProvider({ children }) {
-
   const [preferiti, setPreferiti] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     return saved ? JSON.parse(saved) : [];
@@ -15,24 +14,21 @@ export default function PreferitiProvider({ children }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(preferiti));
   }, [preferiti]);
 
-  function togglePreferiti(id) {
-    const numericId = Number(id);
-
+  const togglePreferiti = (id) => {
     setPreferiti((prev) =>
-      prev.includes(numericId)
-        ? prev.filter((x) => x !== numericId)
-        : [...prev, numericId]
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
-  }
+  };
 
-  function svuotaPreferiti() {
+  const svuotaPreferiti = () => {
     setPreferiti([]);
-  }
+    localStorage.removeItem(STORAGE_KEY);
+  };
 
   const value = {
     preferiti,
     togglePreferiti,
-    svuotaPreferiti
+    svuotaPreferiti,
   };
 
   return (
@@ -42,10 +38,11 @@ export default function PreferitiProvider({ children }) {
   );
 }
 
+// Hook per usare il contesto
 export const usePreferiti = () => {
-    const context = useContext(preferitiContext)
-    if(!context) {
-      throw new Error ("Errore nel valore passato")
-    }
-    return context;
-}
+  const context = useContext(preferitiContext);
+  if (!context) {
+    throw new Error("Errore: usePreferiti deve essere usato dentro PreferitiProvider");
+  }
+  return context;
+};
