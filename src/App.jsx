@@ -20,6 +20,7 @@ import "./Styles/ListaFilm.css"
 import "./Styles/Card.css"
 import "./Styles/Preferiti.css"
 import "./Styles/Novità.css"
+import "./Styles/404.css"
 
 //! Definizione componente App principale e le relative rotte
 export default function App() {
