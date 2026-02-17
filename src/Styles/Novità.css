@@ -1,0 +1,75 @@
+.contenitoreNovità{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 83vh;
+    background-image: url("../../public/sfondoNovita.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+}
+
+.contTabNovità{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.tabNovità {
+  position: relative;       /* necessario per posizionare overlay */
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  background-image: url("../../public/sfondoTabNovita.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white; 
+}
+
+.tabNovità::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* nero semitrasparente */
+  z-index: 1;
+}
+
+.tabNovità > .descNovità{
+  position: relative;
+  z-index: 2;
+}
+
+.imgNovità {
+    max-width: 300px;
+    background-color: aqua;
+    z-index: 2;
+    position: relative;
+}
+
+.tabNovità h1{
+  color: gold;
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  
+}
+
+.descNovità{
+  margin-left: 30px;
+}
+
+.descNovità p{
+    color: white;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

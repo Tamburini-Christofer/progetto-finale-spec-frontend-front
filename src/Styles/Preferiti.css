@@ -1,0 +1,7 @@
+.contenitorePreferiti{
+    width: 100%;
+    height: 83vh;
+    background-image: url("../../public/sfondoPreferiti.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
