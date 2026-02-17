@@ -14,9 +14,11 @@ export default function PreferitiProvider({ children }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(preferiti));
   }, [preferiti]);
 
-  const togglePreferiti = (id) => {
+  const isPreferito = (title) => preferiti.includes(title);
+
+  const togglePreferiti = (title) => {
     setPreferiti((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+      prev.includes(title) ? prev.filter((x) => x !== title) : [...prev, title]
     );
   };
 
@@ -29,6 +31,7 @@ export default function PreferitiProvider({ children }) {
     preferiti,
     togglePreferiti,
     svuotaPreferiti,
+    isPreferito,
   };
 
   return (

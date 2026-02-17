@@ -2,14 +2,13 @@ import { usePreferiti } from "../Assets/context/PreferitiContext";
 
 import chalk from "chalk";
 
-export default function Card({ films, id}) {
-  const { preferiti, togglePreferiti } = usePreferiti();
-
-  const isPreferito = preferiti.includes(id);
+export default function Card({ films, title}) {
+  const { preferiti, togglePreferiti, isPreferito } = usePreferiti();
 
   const preferitiClick = () => {
-    togglePreferiti(id);
-      console.log(isPreferito ? `Il preferito è stato ${chalk.red("rimosso")}` : `Il preferito è stato ${chalk.green("aggiunto")}` );
+    togglePreferiti(films.title);
+    const attualePreferito = isPreferito(films.title);
+      console.log(attualePreferito ? `Il preferito è stato ${chalk.red("rimosso")}` : `Il preferito è stato ${chalk.green("aggiunto")}` );
     };
 
   return (
@@ -23,7 +22,7 @@ export default function Card({ films, id}) {
           </h3>
           <button
             type="button"
-            className={isPreferito ? "preferitiCard preferitiOn" : "preferitiCard"}
+            className={isPreferito(films.title) ? "preferitiCard preferitiOn" : "preferitiCard"}
             onClick={preferitiClick}
           >
             <i className="fa-solid fa-film"></i>
