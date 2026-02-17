@@ -4,7 +4,7 @@ import chalk from "chalk";
 
 const filmsContext = createContext();
 
-function filmsProvider({ children }) {
+export default function filmsProvider({ children }) {
   const [films, setFilms] = useState([]);
 
   async function chiamataFilms() {
@@ -39,5 +39,3 @@ function filmsProvider({ children }) {
     </>
   );
 }
-
-export { filmsProvider }
