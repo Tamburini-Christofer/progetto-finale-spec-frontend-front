@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import chalk from "chalk";
 
 
@@ -9,11 +9,9 @@ export default function FilmsProvider({ children }) {
 
   async function chiamataFilms() {
     try {
-      const res = await fetch("http://localhost:3000/films");
+      const res = await fetch("http://localhost:3001/filmses");
       const dataRes = await res.json();
-      console.log(
-        `Tutti i film sono stati caricati ${chalk.green("correttamente")} ${dataRes}`,
-      );
+      console.log("Tutti i film sono stati caricati correttamente:", dataRes);
       setFilms(dataRes);
     } catch (err) {
       throw new Error(
@@ -37,4 +35,12 @@ export default function FilmsProvider({ children }) {
       </filmsContext.Provider>
     </>
   );
+}
+
+export const useFilm = () => {
+    const context = useContext(filmsContext)
+    if(!context) {
+      throw new Error ("Errore nel valore passato")
+    }
+    return context;
 }

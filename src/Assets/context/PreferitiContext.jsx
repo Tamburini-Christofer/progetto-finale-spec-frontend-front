@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 
 export const preferitiContext = createContext(null);
 
@@ -40,4 +40,12 @@ export default function PreferitiProvider({ children }) {
       {children}
     </preferitiContext.Provider>
   );
+}
+
+export const usePreferiti = () => {
+    const context = useContext(preferitiContext)
+    if(!context) {
+      throw new Error ("Errore nel valore passato")
+    }
+    return context;
 }

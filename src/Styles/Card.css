@@ -5,6 +5,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 480px;
+  height: 320px;
   gap: 20px;
 
   background-image: url("../../public/sfondoTabNovita.jpg");
@@ -47,9 +48,36 @@
 
 .titleCard div,
 .categoryCard div{
-    color: white;
-    letter-spacing: 3px;
- font-family: "Cinzel Decorative", serif;
+  color: white;
+  letter-spacing: 3px;
+  font-family: "Cinzel Decorative", serif;
   font-weight: 400;
   font-style: normal;
 }
+
+.Cardfilm div{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.preferitiCard {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  background-color: black; /* colore rosso acceso */
+  color: white;
+  font-weight: 600;
+  border: 2px solid red;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.preferitiOn {
+  background-color: red;
+  color: white;
+  border: none;
+}
+

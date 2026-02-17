@@ -1,42 +1,31 @@
-import Card from "../Components/Card"
+import Card from "../Components/Card";
+import { useFilm } from "../Assets/context/FilmsContext";
 
-export default function ListaFilm () {
-    return (
-        <>
-        <div className="contenitoreLista">
-            <div className="contenitoreFiltri">
-                <form action="" className="formFiltri">
-                    <select name="" id="">
-                        <option value="">Ordine alfabetico ▼</option>
-                        <option value="">A - Z</option>
-                        <option value="">Z - A</option>
-                    </select>  
-                    <select name="" id="">
-                        <option value="">Seleziona una categoria ▼</option>
-                    </select>
-                    <input type="text" placeholder="Cerca per titolo..."/>
-                    <button className="btnReset"> Reset</button>
-                </form>
-            </div>
-            <div className="contenitoreFilm">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </div>
-        </div>
-        </>
-    )
+export default function ListaFilm() {
+  const { films } = useFilm();
+
+  return (
+    <div className="contenitoreLista">
+      <div className="contenitoreFiltri">
+        <form className="formFiltri">
+          <select>
+            <option value="">Ordine alfabetico ▼</option>
+            <option value="A-Z">A - Z</option>
+            <option value="Z-A">Z - A</option>
+          </select>
+          <select>
+            <option value="">Seleziona una categoria ▼</option>
+          </select>
+          <input type="text" placeholder="Cerca per titolo..." />
+          <button className="btnReset">Reset</button>
+        </form>
+      </div>
+
+      <div className="contenitoreFilm">
+        {films.map((film, index) => (
+          <Card key={index} films={film} id={index} />
+        ))}
+      </div>
+    </div>
+  );
 }

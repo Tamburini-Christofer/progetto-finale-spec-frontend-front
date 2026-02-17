@@ -15,11 +15,11 @@
 
 .contenitoreFilm{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem 4rem;
-    height: 32.5rem;
+    height: 34.5rem;
     overflow-y: auto;
 }
 
