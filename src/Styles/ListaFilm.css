@@ -1,0 +1,56 @@
+.contenitoreLista{
+    background-image: url("../../public/sfondoLista.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.contenitoreFiltri{
+    position:sticky;
+    right: 0;
+    left: 0;
+    gap: 12px;
+    padding: 2rem 5rem;
+}
+
+.contenitoreFilm{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 4rem;
+    height: 32.5rem;
+    overflow-y: auto;
+}
+
+.formFiltri{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.formFiltri input,
+.formFiltri select{
+  padding: 10px 50px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.formFiltri button {
+padding: 10px 50px;
+  border-radius: 12px;
+  border: none;
+  background: red;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btnReset{
+  background: red;
+}

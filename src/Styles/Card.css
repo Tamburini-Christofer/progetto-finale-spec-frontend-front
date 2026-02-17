@@ -1,0 +1,53 @@
+.Cardfilm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 480px;
+  gap: 20px;
+
+  background-image: url("../../public/Pellicola.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  padding: 4.5rem 2rem 2.5rem;
+  text-align: left;
+  overflow: hidden;
+}
+
+.Cardfilm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.40); 
+}
+
+/* Testo sopra */
+.Cardfilm * {
+  position: relative;
+  z-index: 1;
+}
+
+.Cardfilm:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.titleCard, 
+.categoryCard{
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(255, 166, 0);
+    text-shadow: 0 10px 10px rgb(0, 0, 0);
+}
+
+.titleCard div,
+.categoryCard div{
+    color: white;
+    letter-spacing: 3px;
+ font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+}

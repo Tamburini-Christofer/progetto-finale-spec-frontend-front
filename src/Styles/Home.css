@@ -6,11 +6,11 @@
 }
 
 .titleHome h1{
-  color: rgb(255, 255, 255);
-  font-family: "Rye", serif;
+  color: gold;
+ font-family: "Monoton", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 80px;
+  font-size: 60px;
   text-align: end;
   letter-spacing: 10px;
   line-height: 110px;

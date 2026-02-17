@@ -15,6 +15,8 @@ import PaginaNotFound from "./Pages/PaginaNotFound"
 import "./Styles/NavBar.css"
 import "./Styles/Footer.css"
 import "./Styles/Home.css"
+import "./Styles/ListaFilm.css"
+import "./Styles/Card.css"
 
 //! Definizione componente App principale e le relative rotte
 export default function App() {
