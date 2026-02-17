@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 
-export const PreferitiContext = createContext(null);
+export const preferitiContext = createContext(null);
 
 const STORAGE_KEY = "preferiti_games";
 

@@ -2,9 +2,9 @@ import { useState, useEffect, createContext } from "react";
 import chalk from "chalk";
 
 
-const filmsContext = createContext();
+export const filmsContext = createContext();
 
-export default function filmsProvider({ children }) {
+export default function FilmsProvider({ children }) {
   const [films, setFilms] = useState([]);
 
   async function chiamataFilms() {
@@ -27,13 +27,12 @@ export default function filmsProvider({ children }) {
   }
 
   useEffect(() => {
-    setFilms();
+    chiamataFilms();
   }, []);
 
   return (
     <>
-      <filmsContext.Provider>
-        value={{ films }}
+      <filmsContext.Provider value={{ films }}>
         { children }
       </filmsContext.Provider>
     </>

@@ -1,8 +1,6 @@
 import { useContext } from "react"
 
-const useFilms = () => {
+export default function useFilm () {
     const context = useContext(FilmContext)
     return context;
 }
-
-export default useFilms;
