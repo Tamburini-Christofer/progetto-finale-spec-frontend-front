@@ -1,5 +1,4 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import chalk from "chalk";
 
 export const filmsContext = createContext();
 
@@ -10,17 +9,12 @@ export default function FilmsProvider({ children }) {
     try {
       const res = await fetch("http://localhost:3001/filmses");
       const dataRes = await res.json();
-      console.log(
-        `Tutti i film sono stati caricati ${chalk.green("correttamente")}`,
-        dataRes,
-      );
+      console.log("Tutti i film sono stati caricati correttamente", dataRes);
       setFilms(dataRes);
     } catch (err) {
-      throw new Error(
-        `Si è verificato un ${chalk.red("errore")} durante l'operazione ${err}`,
-      );
+      throw new Error(`Si è verificato un errore durante l'operazione ${err}`);
     } finally {
-      console.log(`L'operazione è ${chalk.green("terminata")}`);
+      console.log("L'operazione è terminata");
     }
   }
 

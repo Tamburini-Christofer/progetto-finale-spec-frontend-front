@@ -1,20 +1,23 @@
 import { usePreferiti } from "../Assets/context/PreferitiContext";
+import { Link } from "react-router-dom";
 
-import chalk from "chalk";
-
-export default function Card({ films, title}) {
+export default function Card({ films }) {
   const { preferiti, togglePreferiti, isPreferito } = usePreferiti();
 
   const preferitiClick = () => {
     togglePreferiti(films.title);
     const attualePreferito = isPreferito(films.title);
-      console.log(attualePreferito ? `Il preferito è stato ${chalk.red("rimosso")}` : `Il preferito è stato ${chalk.green("aggiunto")}` );
-    };
+    console.log(
+      attualePreferito ? "Il preferito è stato rimosso" : "Il preferito è stato aggiunto",
+    );
+  };
 
   return (
+    <Link to={`/dettagli/${encodeURIComponent(films.title)}`} className="linkDettagli">
       <div className="Cardfilm">
         <h2 className="titleCard">
-          Titolo:<div>{films.title}</div>
+          Titolo:
+          <div>{films.title}</div>
         </h2>
         <div>
           <h3 className="categoryCard">
@@ -22,13 +25,17 @@ export default function Card({ films, title}) {
           </h3>
           <button
             type="button"
-            className={isPreferito(films.title) ? "preferitiCard preferitiOn" : "preferitiCard"}
+            className={
+              isPreferito(films.title)
+                ? "preferitiCard preferitiOn"
+                : "preferitiCard"
+            }
             onClick={preferitiClick}
           >
             <i className="fa-solid fa-film"></i>
           </button>
         </div>
       </div>
+    </Link>
   );
 }
-

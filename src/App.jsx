@@ -25,6 +25,7 @@ import "./Styles/Card.css";
 import "./Styles/Preferiti.css";
 import "./Styles/Novità.css";
 import "./Styles/404.css";
+import "./Styles/Dettagli.css";
 
 //! Importazione Context
 import FilmsProvider from "./Assets/context/FilmsContext";
@@ -40,7 +41,7 @@ export default function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Homepage />} />
               <Route path="lista-film" element={<ListaFilm />} />
-              <Route path="dettagli" element={<Dettagli />} />
+              <Route path="dettagli/:title" element={<Dettagli />} />
               <Route path="preferiti" element={<Preferiti />} />
               <Route path="novita" element={<Novità />} />
               <Route path="*" element={<PaginaNotFound />} />
