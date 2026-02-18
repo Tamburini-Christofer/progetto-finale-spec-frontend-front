@@ -1,8 +1,6 @@
 import { useFilm } from "../Assets/context/FilmsContext";
 import { usePreferiti } from "../Assets/context/PreferitiContext";
 
-
-
 export default function Preferiti() {
 
   const { preferiti, togglePreferiti, svuotaPreferiti, isPreferito} = usePreferiti();
