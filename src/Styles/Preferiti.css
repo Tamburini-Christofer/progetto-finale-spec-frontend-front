@@ -1,29 +1,55 @@
-.contenitorePreferiti{
-    width: 100%;
-    height: 90vh;
-    background-image: url("../../public/sfondoPreferito.jpg");
-    background-size: cover;
+.contenitorePreferiti {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-image: url("../../public/sfondoPreferito.jpg");
+  background-size: cover;
 }
 
-.tabPreferiti{
-    width: 40%;
-    height: 100%;
-    padding: 2rem;
-    overflow-y: auto;
+.emptyPreferiti {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  text-align: center;
+  color: rgb(255, 166, 0);
+  margin: 20px auto;
+  max-width: 400px;
 }
 
-.preferiti{
-    background-image: url("../../public/preferitoTab.jpg");
-    background-size: cover;
-    background-position-y: 20%;
-    display: flex;
-    justify-content: space-between;
-    padding: 24px;
-    margin: 10px 0;
+.emptyPreferiti h2 {
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 46px;
+  letter-spacing: 5px;
 }
 
-.btnPref{
-  color: rgb(0, 0, 0);              /* testo */
+.emptyPreferiti p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.tabPreferiti {
+  width: 40%;
+  height: 100%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.preferiti {
+  background-image: url("../../public/preferitoTab.jpg");
+  background-size: cover;
+  background-position-y: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  margin: 10px 0;
+}
+
+.btnPref {
+  color: rgb(0, 0, 0); /* testo */
   padding: 12px 25px;
   width: 100px;
   font-size: 12px;
@@ -36,21 +62,27 @@
   margin: 10px 0;
 }
 
-.contBtnPref{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
+.contBtnPref {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .btnPref:hover {
-  background-color: #ff5100; 
+  background-color: #ff5100;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-.confronta{
-    background-color: gold;
+.confronta {
+  background-color: gold;
 }
 
-.rimuovi{
-    background-color: #fa6060; /* colore principale */
+.rimuovi {
+  background-color: #fa6060; /* colore principale */
+}
+
+.resetBtn {
+  position: absolute;
+  right: 3%;
+  bottom: 10%;
 }

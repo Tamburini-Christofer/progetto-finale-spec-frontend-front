@@ -64,6 +64,8 @@
 
     cursor: pointer;
     transition: color 0.3s;
+
+    list-style-type: none;
 }
 
 .iconSocial li a i{

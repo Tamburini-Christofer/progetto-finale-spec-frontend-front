@@ -23,8 +23,10 @@ export default function PreferitiProvider({ children }) {
   };
 
   const svuotaPreferiti = () => {
-    setPreferiti([]);
-    localStorage.removeItem(STORAGE_KEY);
+  const conferma = window.confirm("Sei sicuro di svuotare tutta la lista dei preferiti?");
+  if (!conferma) return;
+  setPreferiti([]);
+  localStorage.removeItem(STORAGE_KEY);
   };
 
   const value = {

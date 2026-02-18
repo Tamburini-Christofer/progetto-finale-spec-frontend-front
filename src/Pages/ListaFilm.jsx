@@ -77,7 +77,7 @@ export default function ListaFilm() {
             value={ordineAlfabetico}
             onChange={e => setOrdineAlfabetico(e.target.value)}
           >
-            <option value="">Ordine alfabetico ▼</option>
+            <option value="">Ordine alfabetico</option>
             <option value="A-Z">A - Z</option>
             <option value="Z-A">Z - A</option>
           </select>
@@ -86,7 +86,7 @@ export default function ListaFilm() {
             value={categoria}
             onChange={e => setCategoria(e.target.value)}
           >
-            <option value="">Seleziona una categoria ▼</option>
+            <option value="">Seleziona una categoria</option>
             {[...new Set(films.map(f => f.category))].map((cat, index) => (
               <option key={index} value={cat}>{cat}</option>
             ))}
