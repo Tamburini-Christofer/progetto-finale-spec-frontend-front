@@ -10,9 +10,8 @@ export default function Preferiti() {
   return (
     <div className="contenitorePreferiti">
       {soloPreferiti.length === 0 ? (
-        <div className="emptyPreferiti">
+        <div className="empty">
           <h2>Nessun preferito</h2>
-          <p>Aggiungi qualche film ai preferiti per vederli qui.</p>
         </div>
       ) : (
         <>

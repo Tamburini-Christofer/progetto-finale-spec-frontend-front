@@ -6,29 +6,22 @@
   background-size: cover;
 }
 
-.emptyPreferiti {
+.empty {
   position: absolute;
-  top: 30%;
-  left: 5%;
-  text-align: center;
-  color: rgb(255, 166, 0);
-  margin: 20px auto;
-  max-width: 400px;
-}
-
-.emptyPreferiti h2 {
-  margin-bottom: 10px;
-  letter-spacing: 3px;
+  backdrop-filter: blur(30px) opacity(0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Cinzel Decorative", serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 46px;
-  letter-spacing: 5px;
-}
-
-.emptyPreferiti p {
-  font-size: 16px;
-  color: #ffffff;
+  color: rgb(243, 242, 242);
+  font-size: 36px;
+  z-index: 1;
 }
 
 .tabPreferiti {

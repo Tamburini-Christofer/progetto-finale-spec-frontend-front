@@ -1,8 +1,10 @@
 .contenitoreLista{
+  position: relative;
     background-image: url("../../public/sfondoLista.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    height: 90vh;
 }
 
 .contenitoreFiltri{
@@ -11,6 +13,7 @@
     left: 0;
     gap: 12px;
     padding: 2rem 5rem;
+    z-index: 100;
 }
 
 .contenitoreFilm{
@@ -64,4 +67,22 @@ padding: 10px 50px;
 
 .btnReset{
   background: red;
+}
+
+.emptyfilms {
+  position: absolute;
+  backdrop-filter: blur(20px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(255, 166, 0);
+  font-size: 36px;
+  z-index: 1;
 }

@@ -6,26 +6,11 @@ export default function Card({ films }) {
 
   const preferitiClick = () => {
     togglePreferiti(films.title);
-    const attualePreferito = isPreferito(films.title);
-    console.log(
-      attualePreferito ? "Il preferito è stato rimosso" : "Il preferito è stato aggiunto",
-    );
   };
 
   return (
-    <Link
-      to={`/dettagli/${encodeURIComponent(films.title)}${films.id ? `?id=${films.id}` : ""}`}
-      className="linkDettagli"
-    >
-      <div className="Cardfilm">
-        <h2 className="titleCard">
-          Titolo:
-          <div>{films.title}</div>
-        </h2>
-        <div>
-          <h3 className="categoryCard">
-            Categoria:<div>{films.category}</div>
-          </h3>
+    <div className="contenitoreCard">
+       <div>
           <button
             type="button"
             className={
@@ -36,9 +21,29 @@ export default function Card({ films }) {
             onClick={preferitiClick}
           >
             <i className="fa-solid fa-film"></i>
+            <span>Aggiungi ai preferiti</span>
           </button>
         </div>
+      <div className="CardWrapper">
+        <Link
+          to={`/dettagli/${encodeURIComponent(films.title)}${
+            films.id ? `?id=${films.id}` : ""
+          }`}
+          className="linkDettagli"
+        >
+          <div className="Cardfilm">
+            <h2 className="titleCard">
+              Titolo:
+              <div>{films.title}</div>
+            </h2>
+
+            <h3 className="categoryCard">
+              Categoria:
+              <div>{films.category}</div>
+            </h3>
+          </div>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }

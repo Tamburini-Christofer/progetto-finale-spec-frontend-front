@@ -6,49 +6,45 @@ import { useFilm } from "../Assets/context/FilmsContext";
 export default function ListaFilm() {
   const { films } = useFilm();
 
-  //! Gestione stato
+  // Stato
   const [ricerca, setRicerca] = useState("");
   const [ricercaDebounced, setRicercaDebounced] = useState("");
   const [categoria, setCategoria] = useState("");
   const [ordineAlfabetico, setOrdineAlfabetico] = useState("");
-  //!
 
-  //! Gestione Debounce
+  // Debounce ricerca
   const debounceRicerca = useCallback(
     debounce(value => {
       setRicercaDebounced(value);
     }, 500),
     []
   );
-  //!
 
   const handleSearch = e => {
     setRicerca(e.target.value);
     debounceRicerca(e.target.value);
   };
 
+
   const filtriFilms = useMemo(() => {
     let result = [...films];
 
     if (ricercaDebounced) {
       result = result.filter(f =>
-        f.title.toLowerCase().includes(ricercaDebounced.toLowerCase()));
-        console.log("Hai cercato usando il filtro: ricerca Generica")
+        f.title.toLowerCase().includes(ricercaDebounced.toLowerCase())
+      );
     }
 
     if (categoria) {
       result = result.filter(f => f.category === categoria);
-      console.log("Hai usato il filtro " + categoria)
     }
 
     switch (ordineAlfabetico) {
       case "A-Z":
         result.sort((a, b) => a.title.localeCompare(b.title));
-        console.log("Hai usato il filtro: Ordine crescente")
         break;
       case "Z-A":
         result.sort((a, b) => b.title.localeCompare(a.title));
-        console.log("Hai usato il filtro: Ordine decrescente")
         break;
       default:
         break;
@@ -62,7 +58,6 @@ export default function ListaFilm() {
     setRicercaDebounced("");
     setCategoria("");
     setOrdineAlfabetico("");
-    console.log("Hai resettato i filtri di ricerca")
   };
 
   return (
@@ -84,7 +79,9 @@ export default function ListaFilm() {
           >
             <option value="">Seleziona una categoria ▼</option>
             {[...new Set(films.map(f => f.category))].map((cat, index) => (
-              <option key={index} value={cat}>{cat}</option>
+              <option key={index} value={cat}>
+                {cat}
+              </option>
             ))}
           </select>
 
@@ -101,11 +98,17 @@ export default function ListaFilm() {
         </form>
       </div>
 
-      <div className="contenitoreFilm">
-        {filtriFilms.map((film) => (
-          <Card key={film.title} films={film}/>
-        ))}
-      </div>
+      {filtriFilms.length !== 0 ? (
+        <div className="contenitoreFilm">
+          {filtriFilms.map(film => (
+            <Card key={film.title} films={film} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty">
+          <h2>Nessun Film presente</h2>
+        </div>
+      )}
     </div>
   );
 }

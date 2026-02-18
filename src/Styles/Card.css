@@ -18,11 +18,16 @@
   transition: 300ms;
 }
 
+.contenitoreCard {
+  display: flex;
+  flex-direction: column;
+}
+
 .Cardfilm::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.40); 
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .Cardfilm * {
@@ -30,24 +35,23 @@
   z-index: 1;
 }
 
-.Cardfilm:hover{
-    cursor: pointer;
-    transform: scale(1.03);
-    transition: 300ms;
-    opacity: 0.95;
+.Cardfilm:hover {
+  cursor: pointer;
+  transition: 300ms;
+  opacity: 0.9;
 }
 
-.titleCard, 
-.categoryCard{
-    font-family: "Limelight", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: rgb(255, 166, 0);
-    text-shadow: 0 10px 10px rgb(0, 0, 0);
+.titleCard,
+.categoryCard {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(255, 166, 0);
+  text-shadow: 0 10px 10px rgb(0, 0, 0);
 }
 
 .titleCard div,
-.categoryCard div{
+.categoryCard div {
   color: white;
   letter-spacing: 3px;
   font-family: "Cinzel Decorative", serif;
@@ -55,7 +59,7 @@
   font-style: normal;
 }
 
-.Cardfilm div{
+.Cardfilm div {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -64,23 +68,35 @@
 .preferitiCard {
   display: flex;
   align-items: center;
-  padding: 6px 14px;
   background-color: black; /* colore rosso acceso */
   color: white;
   font-weight: 600;
-  border: 2px solid red;
-  border-radius: 8px;
+  border-bottom: 1px solid rgb(242, 238, 238);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.preferitiCard:hover {
+  background-color: rgba(144, 0, 0, 0.935);
+  color: rgb(237, 231, 231);
+}
+
+.preferitiCard i {
+  margin: 0 5px 0 10px;
+}
+
+.preferitiCard span {
+  color: white;
+  padding: 10px;
 }
 
 .preferitiOn {
   background-color: red;
   color: rgb(0, 0, 0);
-  border: none;
 }
 
-.linkDettagli{
+.linkDettagli {
   text-decoration: none;
 }
