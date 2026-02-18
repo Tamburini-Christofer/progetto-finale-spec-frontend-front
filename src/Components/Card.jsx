@@ -2,7 +2,7 @@ import { usePreferiti } from "../Assets/context/PreferitiContext";
 import { Link } from "react-router-dom";
 
 export default function Card({ films }) {
-  const { preferiti, togglePreferiti, isPreferito } = usePreferiti();
+  const { togglePreferiti, isPreferito } = usePreferiti();
 
   const preferitiClick = () => {
     togglePreferiti(films.title);
@@ -13,7 +13,10 @@ export default function Card({ films }) {
   };
 
   return (
-    <Link to={`/dettagli/${encodeURIComponent(films.title)}`} className="linkDettagli">
+    <Link
+      to={`/dettagli/${encodeURIComponent(films.title)}${films.id ? `?id=${films.id}` : ""}`}
+      className="linkDettagli"
+    >
       <div className="Cardfilm">
         <h2 className="titleCard">
           Titolo:
