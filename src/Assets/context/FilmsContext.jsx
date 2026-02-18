@@ -37,6 +37,7 @@ export default function FilmsProvider({ children }) {
   );
 }
 
+//! Esportazione customHook useFilm
 export const useFilm = () => {
   const context = useContext(filmsContext);
   if (!context) {
@@ -44,3 +45,4 @@ export const useFilm = () => {
   }
   return context;
 };
+//!

@@ -3,26 +3,32 @@
     justify-content: end;
     width: 100%;
     height: 90vh;
-    background-image: url("../../public/sfondoNovita.jpg") ;
+    background-image: url("../../public/sfondoNovità.jpg") ;
     background-repeat: no-repeat;
-    background-size: cover;
-    padding: 4rem;
+    background-size: contain;
+    background-position-y: 50%;
 }
 
 .contTabNovità{
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
     width: 50%;
-    height: 100%;
     overflow-y: auto;
+}
+
+.contTabNovità a{
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tabNovità {
   position: relative;       /* necessario per posizionare overlay */
   display: flex;
-  width: 100%;
   padding: 20px;
+  width: 48.5rem;
   background-image: url("../../public/sfondoTabNovita.jpg");
   background-size: cover;
   background-position: center;
@@ -34,6 +40,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* nero semitrasparente */

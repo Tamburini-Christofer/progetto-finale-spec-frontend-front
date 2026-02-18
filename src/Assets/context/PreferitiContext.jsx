@@ -41,7 +41,7 @@ export default function PreferitiProvider({ children }) {
   );
 }
 
-// Hook per usare il contesto
+//! Esportazione customHook usePreferiti
 export const usePreferiti = () => {
   const context = useContext(preferitiContext);
   if (!context) {
@@ -49,3 +49,4 @@ export const usePreferiti = () => {
   }
   return context;
 };
+//!

@@ -7,18 +7,21 @@ import chalk from "chalk"
 export default function ListaFilm() {
   const { films } = useFilm();
 
+  //! Gestione stato
   const [ricerca, setRicerca] = useState("");
   const [ricercaDebounced, setRicercaDebounced] = useState("");
   const [categoria, setCategoria] = useState("");
   const [ordineAlfabetico, setOrdineAlfabetico] = useState("");
+  //!
 
-  // debounce ricerca
+  //! Gestione Debounce
   const debounceRicerca = useCallback(
     debounce(value => {
       setRicercaDebounced(value);
     }, 500),
     []
   );
+  //!
 
   const handleSearch = e => {
     setRicerca(e.target.value);
