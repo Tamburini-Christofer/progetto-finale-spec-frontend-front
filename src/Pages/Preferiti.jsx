@@ -1,6 +1,11 @@
+//! Importazioni delle dipendenze
 import { useState } from "react";
+
+//! Importazione dei compopnenti
 import { usePreferiti } from "../Assets/context/PreferitiContext";
 import CardDettagli from "../Components/CardDettagli";
+
+//! Importazione del database film films.json in backend 
 import filmsDatabase from "../../progetto-finale-spec-frontend-back/database/films.json";
 
 export default function Preferiti() {
@@ -9,10 +14,12 @@ export default function Preferiti() {
 
   const soloPreferiti = filmsDatabase.filter((f) => isPreferito(f.title));
 
+  //? Funzione per il confronto
   const toggleConfronto = (film) => {
     setConfronto((prev) => {
       const esiste = prev.find((f) => f.title === film.title);
       if (esiste) return prev.filter((f) => f.title !== film.title);
+
       if (prev.length >= 4) {
         alert("Puoi confrontare massimo 4 film");
         return prev;
@@ -21,6 +28,7 @@ export default function Preferiti() {
     });
   };
 
+  //? Funzione per ottenere i dettagli di un film, con formattazione del budget e incasso
   const getFilmDettaglio = (film) => {
     const filmDb = filmsDatabase.find(f => f.title === film.title);
 
@@ -32,6 +40,7 @@ export default function Preferiti() {
       }).format(Number(val));
     };
 
+    //? Variabili di supporto
     const budgetFormattato = formatValuta(filmDb.budget);
     const incassoFormattato = formatValuta(filmDb.box_office);
 
@@ -40,13 +49,17 @@ export default function Preferiti() {
 
   return (
     <div className="contenitorePreferiti">
+
       {soloPreferiti.length === 0 ? (
         <div className="empty">
           <h2>Nessun preferito</h2>
         </div>
+
       ) : (
+        
         <>
           <div className="tabPreferiti">
+
             {soloPreferiti.map((film) => (
               <div className="preferiti" key={film.title}>
                 <div>
@@ -64,11 +77,15 @@ export default function Preferiti() {
                 </div>
               </div>
             ))}
+
           </div>
 
           {confronto.length > 0 && (
+
             <div className="areaConfronto">
+
               <div className="gridConfronto">
+
                 {confronto.map((film) => {
                   const {
                     budgetFormattato,
@@ -89,8 +106,11 @@ export default function Preferiti() {
                     />
                   );
                 })}
+
               </div>
+
             </div>
+            
           )}
 
           <button className="resetBtn" disabled={preferiti.length === 0} onClick={svuotaPreferiti}>

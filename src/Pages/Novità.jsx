@@ -1,14 +1,16 @@
 import novità from "../Utils/novità";
 
 export default function Novità() {
-
   return (
     <>
       <div className="contenitoreNovità">
+
         <div className="contTabNovità">
+
           {novità.map((item) => (
             <a href={item.linkRiferimento} key={item.id}>
               <div key={item.id} className="tabNovità">
+
                 <div>
                   <img
                     className="imgNovità"
@@ -16,6 +18,7 @@ export default function Novità() {
                     alt={item.titolo}
                   />
                 </div>
+
                 <div className="descNovità">
                   <h1>{item.titolo}</h1>
                   <p>{item.descrizione}</p>
@@ -23,7 +26,9 @@ export default function Novità() {
               </div>
             </a>
           ))}
+
         </div>
+        
       </div>
     </>
   );

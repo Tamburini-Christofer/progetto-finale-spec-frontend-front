@@ -10,12 +10,11 @@ export default function FilmsProvider({ children }) {
       const res = await fetch("http://localhost:3001/filmses");
       const dataRes = await res.json();
       console.log("Tutti i film sono stati caricati correttamente", dataRes);
-      setFilms(dataRes);
-    } catch (err) {
-      throw new Error(`Si è verificato un errore durante l'operazione ${err}`);
-    } finally {
-      console.log("L'operazione è terminata");
-    }
+      setFilms(dataRes);} 
+    
+    catch (err) {throw new Error(`Si è verificato un errore durante l'operazione ${err}`);} 
+    
+    finally {console.log("L'operazione è terminata");}
   }
 
   useEffect(() => {

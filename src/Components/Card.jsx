@@ -10,8 +10,10 @@ export default function Card({ films }) {
 
   return (
     <div className="contenitoreCard">
+
       <div>
         <div className="BtnContainer">
+
           <button
             type="button"
             className={
@@ -21,12 +23,15 @@ export default function Card({ films }) {
             }
             onClick={preferitiClick}
           >
+
             <span>
               {isPreferito(films.title)
                 ? "Rimuovi dai preferiti"
                 : "Aggiungi ai preferiti"}
             </span>
+
           </button>
+
           <Link
             to={`/dettagli/${encodeURIComponent(films.title)}${
               films.id ? `?id=${films.id}` : ""
@@ -34,10 +39,14 @@ export default function Card({ films }) {
           >
             <button className="preferitiCardDettagli">Dettagli del film</button>
           </Link>
+
         </div>
       </div>
+
       <div className="CardWrapper">
+
         <div className="Cardfilm">
+
           <h2 className="titleCard">
             Titolo:
             <div>{films.title}</div>
@@ -45,10 +54,15 @@ export default function Card({ films }) {
 
           <h3 className="categoryCard">
             Categoria:
-            <div>{films.category}</div>
+            <div>
+              {films.category}
+            </div>
           </h3>
+
         </div>
+
       </div>
+      
     </div>
   );
 }

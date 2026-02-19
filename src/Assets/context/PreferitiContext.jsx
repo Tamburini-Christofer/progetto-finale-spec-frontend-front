@@ -5,6 +5,8 @@ export const preferitiContext = createContext(null);
 const STORAGE_KEY = "preferiti_films";
 
 export default function PreferitiProvider({ children }) {
+
+  //? Salvataggio dei preferiti
   const [preferiti, setPreferiti] = useState(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     return saved ? JSON.parse(saved) : [];

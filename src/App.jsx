@@ -1,9 +1,5 @@
 //! Importazione dipendenze
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 //! Importazione Layout principale
 import Layout from "./Layout/Layout";

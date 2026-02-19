@@ -1,7 +1,8 @@
+//! Importazione dipendenze
 import { NavLink } from "react-router-dom";
-import { usePreferiti } from "../Assets/context/PreferitiContext";
 
-import "../Styles/NavBar.css";
+//! Importazione Context
+import { usePreferiti } from "../Assets/context/PreferitiContext";
 
 const linkPages = [
   { route: "/", label: "Homepage" },
@@ -15,24 +16,24 @@ export default function Navbar() {
   return (
     <>
       <ul className="listaNavBar">
+
         {linkPages.map((link, indice) => (
           <li key={indice}>
-            <NavLink
-              to={link.route}
-              className={({ isActive }) =>
-                isActive ? "active-link" : "notActive-link"
-              }
-            >
+
+            <NavLink to={link.route} className={({ isActive }) => isActive ? "active-link" : "notActive-link"}>
               {link.label}
             </NavLink>
+
           </li>
         ))}
+        
         <li>
           <div className="preferitiConta">
+
             <NavLink to={"/preferiti"}>
-              {" "}
-              <i className="fa-solid fa-film"></i>{" "}
+              <i className="fa-solid fa-film"></i>
             </NavLink>
+
             <div className="heartBadge">{preferiti.length}</div>
           </div>
         </li>
