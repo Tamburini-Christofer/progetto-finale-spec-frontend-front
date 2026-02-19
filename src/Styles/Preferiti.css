@@ -57,6 +57,10 @@
   margin: 10px 0;
 }
 
+.btnPreConf{
+  background-color: #ff6600; 
+}
+
 .contBtnPref {
   display: flex;
   flex-direction: column;
@@ -64,7 +68,7 @@
 }
 
 .btnPref:hover {
-  background-color: #ff5100;
+  background-color: #ffd500;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 

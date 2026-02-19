@@ -171,7 +171,15 @@
 }
 
 .btnBackOff {
-  background: rgba(255, 0, 0, 0.856);
+   background: rgba(235, 0, 0, 0.856);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: white;
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0px 5px;
+  cursor: pointer;
 }
 
 .btnBack:hover {

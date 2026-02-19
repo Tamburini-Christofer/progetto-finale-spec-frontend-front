@@ -11,6 +11,7 @@
   background-image: url("../../public/sfondoTabNovita.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  border: 1px solid white;
 
   padding: 3rem;
   text-align: left;
@@ -68,20 +69,40 @@
 .preferitiCard {
   display: flex;
   align-items: center;
-  background-color: black; /* colore rosso acceso */
+  background-color: black;
   color: white;
   font-weight: 600;
-  border-bottom: 1px solid rgb(242, 238, 238);
+  border: 1px solid white;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
+.preferitiCardDettagli{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 16rem;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 1rem; 
+}
+
 .preferitiCard:hover {
   background-color: rgba(144, 0, 0, 0.935);
   color: rgb(237, 231, 231);
 }
+
+.preferitiCardDettagli:hover{
+  background-color: rgba(109, 39, 251, 0.935);
+  color: rgb(237, 231, 231);
+}
+
 
 .preferitiCard i {
   margin: 0 5px 0 10px;
@@ -93,10 +114,15 @@
 }
 
 .preferitiOn {
-  background-color: red;
+  background-color: rgb(255, 51, 51);
   color: rgb(0, 0, 0);
 }
 
 .linkDettagli {
   text-decoration: none;
 }
+
+.BtnContainer{
+  display: flex;
+}
+

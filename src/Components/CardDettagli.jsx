@@ -55,7 +55,7 @@ export default function CardDettagli({
               <p><strong>Regista:</strong> {film.director}</p>
             </div>
             <div>
-              <p><strong>Durata:</strong> {film.runtime ?? "N/D"} min</p>
+              <p><strong>Durata:</strong> {film.runtime} min</p>
               <p><strong>Budget:</strong> {budgetFormattato}</p>
               <p><strong>Incasso:</strong> {incassoFormattato}</p>
             </div>
