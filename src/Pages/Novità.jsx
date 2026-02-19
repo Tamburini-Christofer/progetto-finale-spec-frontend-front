@@ -51,7 +51,7 @@ export default function Novità() {
       <div className="contenitoreNovità">
         <div className="contTabNovità">
           {novità.map((item) => (
-            <a href={item.linkRiferimento}>
+            <a href={item.linkRiferimento} key={item.id}>
               <div key={item.id} className="tabNovità">
                 <div>
                   <img

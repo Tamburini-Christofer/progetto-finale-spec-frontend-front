@@ -21,7 +21,7 @@ export default function Card({ films }) {
             onClick={preferitiClick}
           >
             <i className="fa-solid fa-film"></i>
-            <span>Aggiungi ai preferiti</span>
+            <span>{isPreferito(films.title) ? "Rimuovi dai preferiti" : "Aggiungi ai preferiti"}</span>
           </button>
         </div>
       <div className="CardWrapper">
