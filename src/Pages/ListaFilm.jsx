@@ -1,32 +1,58 @@
 //! Importazioni dipendenze
-import { useState, useCallback, useMemo } from "react";
+import { useReducer, useMemo } from "react";
 import debounce from "lodash.debounce";
 
 //!Importazioni componenti
 import Card from "../Components/Card";
 import { useFilm } from "../Assets/context/FilmsContext";
 
-//* Componente ListaFilm
-export default function ListaFilm() {
-  const { films } = useFilm();
+  //! Stato iniziale per useReducer
+  const initialState = {
+    ricerca: "",
+    ricercaDebounced: "",
+    categoria: "",
+    ordineAlfabetico: "",
+    };
 
-  //! Stati dei filtri
-  const [ricerca, setRicerca] = useState("");
-  const [ricercaDebounced, setRicercaDebounced] = useState("");
-  const [categoria, setCategoria] = useState("");
-  const [ordineAlfabetico, setOrdineAlfabetico] = useState("");
+    function reducer(state, action) {
+  switch (action.type) {
+    case "SET_RICERCA":
+      return { ...state, ricerca: action.payload };
+
+    case "SET_RICERCA_DEBOUNCED":
+      return { ...state, ricercaDebounced: action.payload };
+
+    case "SET_CATEGORIA":
+      return { ...state, categoria: action.payload };
+
+    case "SET_ORDINE":
+      return { ...state, ordineAlfabetico: action.payload };
+
+    case "RESET":
+      return initialState;
+
+    default:
+      return state;
+  }
+}
+
+  //* Componente ListaFilm
+  export default function ListaFilm() {
+  const { films } = useFilm();
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   //? Funzione di debounce per la ricerca
-  const debounceRicerca = useCallback(
+  const debounceRicerca = useMemo(
+    () =>
     debounce(value => {
-      setRicercaDebounced(value);
+      dispatch({ type: "SET_RICERCA_DEBOUNCED", payload: value });
     }, 500),
     []
   );
 
   //? Settaggio della ricerca
   const handleSearch = e => {
-    setRicerca(e.target.value);
+    dispatch({ type: "SET_RICERCA", payload: e.target.value });
     debounceRicerca(e.target.value);
   };
 
@@ -35,28 +61,20 @@ export default function ListaFilm() {
     let result = [...films];
 
     //? Ricerca per titolo
-    if (ricercaDebounced) result = result.filter(f => f.title.toLowerCase().includes(ricercaDebounced.toLowerCase()));
+    if (state.ricercaDebounced) result = result.filter(f => f.title.toLowerCase().includes(state.ricercaDebounced.toLowerCase()));
 
     //? Ricerca per categoria
-    if (categoria) result = result.filter(f => f.category === categoria);
+    if (state.categoria) result = result.filter(f => f.category === state.categoria);
     
     //? Ordinamento alfabetico tramite uno switch
-    switch (ordineAlfabetico) {
+    switch (state.ordineAlfabetico) {
       case "A-Z": result.sort((a, b) => a.title.localeCompare(b.title)); break;
       case "Z-A": result.sort((a, b) => b.title.localeCompare(a.title)); break;
       default: break;
     }
 
     return result;
-  }, [films, ricercaDebounced, categoria, ordineAlfabetico]);
-
-  //? Funzione per resettare i filtri
-  const resetFiltri = () => {
-    setRicerca("");
-    setRicercaDebounced("");
-    setCategoria("");
-    setOrdineAlfabetico("");
-  };
+  }, [films, state.ricercaDebounced, state.categoria, state.ordineAlfabetico]);
 
   return (
     <div className="contenitoreLista">
@@ -65,13 +83,13 @@ export default function ListaFilm() {
 
         <form className="formFiltri" onSubmit={e => e.preventDefault()}>
 
-          <select value={ordineAlfabetico} onChange={e => setOrdineAlfabetico(e.target.value)}>
+          <select value={state.ordineAlfabetico} onChange={e => dispatch({ type: "SET_ORDINE", payload: e.target.value })}>
             <option value="">Ordine alfabetico</option>
             <option value="A-Z">A - Z</option>
             <option value="Z-A">Z - A</option>
           </select>
 
-          <select value={categoria} onChange={e => setCategoria(e.target.value)}>
+          <select value={state.categoria} onChange={e => dispatch({ type: "SET_CATEGORIA", payload: e.target.value })}>
             <option value="">Seleziona una categoria ▼</option>
             {[...new Set(films.map(f => f.category))].map((cat, index) => (
               <option key={index} value={cat}>
@@ -83,11 +101,11 @@ export default function ListaFilm() {
           <input
             type="text"
             placeholder="Cerca per titolo..."
-            value={ricerca}
+            value={state.ricerca}
             onChange={handleSearch}
           />
 
-          <button type="button" className="btnReset" onClick={resetFiltri}> Reset </button>
+          <button type="button" className="btnReset" onClick={() => dispatch({ type: "RESET" })}> Reset </button>
 
         </form>
 
