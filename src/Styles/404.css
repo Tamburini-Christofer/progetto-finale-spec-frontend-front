@@ -1,18 +1,21 @@
 .contenitore404{
     position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-image: url("../../public/sfondoNotFound.jpg");
     background-repeat: no-repeat;
     background-position-y: 10%;
     background-size: cover;
-    width: 100%;
+
     height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .contenitore404 div {
-    margin: 0 0 8rem 4rem ;
     font-size: 80px;
     text-align: center;
+    
+    margin: 0 0 8rem 4rem ;
 }

@@ -1,10 +1,13 @@
+/** Contenitore Lista Film */
+
 .contenitoreLista{
-  position: relative;
+    position: relative;
+    
     background-image: url("../../public/sfondoLista.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 90vh;
+
+    height: 90vh;;
 }
 
 .contenitoreFiltri{
@@ -12,19 +15,25 @@
     right: 0;
     left: 0;
     gap: 12px;
+
     padding: 2rem 5rem;
+
     z-index: 100;
 }
 
 .contenitoreFilm{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+
     padding: 2rem 4rem;
-    height: 79vh;
+
+    height: 77vh;
     overflow-y: auto;
 }
+
+/** Form Filtri */
 
 .formFiltri{
     display: flex;
@@ -36,10 +45,13 @@
 .formFiltri input{
   appearance: none;     
   background-color: black; 
-  color: white;             
+  color: white;   
+
   border-radius: 10px;
   border: 1px solid white;   
+
   padding: 10px 40px; 
+
   font-size: 16px;
   text-align: center;      
   text-align-last: center;  
@@ -55,10 +67,12 @@
 
 .formFiltri button,
 .resetBtn {
-padding: 10px 50px;
+  padding: 10px 50px;
+
   border-radius: 12px;
   border: none;
-  background: red;
+
+  background: var(--preferiti);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -66,8 +80,10 @@ padding: 10px 50px;
 }
 
 .btnReset{
-  background: red;
+  background: var(--preferiti);
 }
+
+/** In caso che non ci siano film */
 
 .emptyfilms {
   position: absolute;
@@ -76,13 +92,17 @@ padding: 10px 50px;
   left: 0;
   right: 0;
   bottom: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: "Cinzel Decorative", serif;
   font-weight: 600;
   font-style: normal;
-  color: rgb(255, 166, 0);
+
+  color: var(--oro);
+
   font-size: 36px;
   z-index: 1;
 }

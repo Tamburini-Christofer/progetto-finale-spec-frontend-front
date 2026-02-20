@@ -1,6 +1,5 @@
-/*! Footer */
+/** Contenitore Footer */
 
-/*? Contenitore Footer */
 .contenitoreFooter{ 
     background: linear-gradient(180deg, rgb(6, 6, 8), rgba(6, 6, 8, 0.9));
     backdrop-filter: blur(6px) saturate(110%);
@@ -25,7 +24,6 @@
     font-size: 20px;
 }
 
-
 .linkFooter ul{ 
     display: flex;
     gap: 28px;
@@ -46,7 +44,7 @@
 }
 
 .linkFooter li a:hover{
-    color: gold;
+    color: rgb(255, 183, 0);
 }
 
 .contenitoreFooter p{
@@ -54,7 +52,7 @@
     font-size: 14px;
 }
 
-/*? Icon Social Footer */
+/** Icon Social Footer */
 .iconSocial{
 
     display: flex;
@@ -73,5 +71,5 @@
 }
 
 .iconSocial li a i:hover{
-    color: gold;
+    color: rgb(255, 183, 0);
 }

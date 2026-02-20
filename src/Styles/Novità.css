@@ -1,38 +1,48 @@
-.contenitoreNovità{
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    height: 90vh;
-    background-image: url("../../public/sfondoNovità.jpg") ;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: 50%;
+/** Contenitore Novità */
+
+.contenitoreNovità {
+  display: flex;
+  justify-content: end;
+
+  height: 90vh;
+
+  background-image: url("../../public/sfondoNovità.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 50%;
 }
 
-.contTabNovità{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    width: 50%;
-    overflow-y: auto;
-}
-
-.contTabNovità a{
-  text-decoration: none;
+.contTabNovità {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  width: 50%;
+
+  overflow-y: auto;
+}
+
+.contTabNovità a {
+  display: flex;
+  flex-wrap: wrap;
+
+  text-decoration: none;
 }
 
 .tabNovità {
-  position: relative;       /* necessario per posizionare overlay */
+  position: relative;
+
   display: flex;
+
   padding: 20px;
   width: 48.5rem;
+
   background-image: url("../../public/sfondoTabNovita.jpg");
   background-size: cover;
   background-position: center;
-  color: white; 
+
+  color: white;
 }
 
 .tabNovità::before {
@@ -41,41 +51,44 @@
   top: 0;
   left: 0;
   right: 0;
+
   width: 100%;
   height: 100%;
+
   background-color: rgba(0, 0, 0, 0.5); /* nero semitrasparente */
   z-index: 1;
 }
 
-.tabNovità > .descNovità{
+.tabNovità > .descNovità {
   position: relative;
   z-index: 2;
 }
 
 .imgNovità {
-    max-width: 300px;
-    background-color: aqua;
-    z-index: 2;
-    position: relative;
+  position: relative;
+
+  max-width: 300px;
+
+  z-index: 2;
 }
 
-.tabNovità h1{
-  color: gold;
+.tabNovità h1 {
+  color: var(--oro);
+  
   font-family: "Monoton", sans-serif;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 3px;
   font-size: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  
 }
 
-.descNovità{
+.descNovità {
   margin-left: 30px;
 }
 
-.descNovità p{
-    color: white;
-    margin: 10px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.descNovità p {
+  color: white;
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }

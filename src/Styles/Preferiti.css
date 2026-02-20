@@ -1,34 +1,42 @@
+/** Contenitore Preferiti */
+
 .contenitorePreferiti {
   position: relative;
   display: flex;
-  width: 100%;
+
   height: 90vh;
+
   background-image: url("../../public/sfondoPreferito.jpg");
   background-size: cover;
 }
 
+/** Contenitore Tab Preferiti */
 .empty {
   position: absolute;
-  backdrop-filter: blur(30px) opacity(0.9);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+
+  backdrop-filter: blur(30px) opacity(0.9);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: "Cinzel Decorative", serif;
   font-weight: 600;
   font-style: normal;
-  color: rgb(243, 242, 242);
   font-size: 36px;
+
+  color: rgb(243, 242, 242);
+  
   z-index: 1;
 }
 
 .tabPreferiti {
   width: 40%;
-  height: 100%;
-  padding: 2rem;
+  height: 84vh;
   overflow-y: auto;
 }
 
@@ -36,16 +44,19 @@
   background-image: url("../../public/preferitoTab.jpg");
   background-size: cover;
   background-position-y: 20%;
+
   display: flex;
-  height: 10rem;
+  align-items: center;
   justify-content: space-between;
+
   padding: 24px;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .btnPref {
-  color: rgb(0, 0, 0); /* testo */
-  padding: 12px 25px;
+  color: rgb(0, 0, 0); 
+
+  padding: 10px 20px;
   width: 100px;
   font-size: 12px;
   font-weight: bold;
@@ -57,46 +68,38 @@
   margin: 10px 0;
 }
 
-.btnPreConf{
-  background-color: #ff6600; 
+.btnPreConf {
+  background-color: var(--oro);
 }
 
 .contBtnPref {
   display: flex;
-  flex-direction: column;
   align-items: end;
 }
 
 .btnPref:hover {
-  background-color: #ffd500;
+  background-color: var(--oro);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-.confronta {
-  background-color: gold;
-}
-
 .rimuovi {
-  background-color: #fa6060; /* colore principale */
+  background-color: var(--preferiti);
+  margin-left: 20px;
 }
 
 .resetBtn {
   position: absolute;
   right: 3%;
-  bottom: 10%;
+  bottom: 8%;
 }
 
-.areaConfronto{
-  width: 100%;
+.areaConfronto {
+  width: 60%;
   height: 80vh;
-
 }
 
 .gridConfronto {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  padding: 20px;
-  max-height: 97%;
 }
-

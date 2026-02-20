@@ -1,22 +1,26 @@
-body{
-    background-color: black;
-}
+/** NavBar */
 
 .listaNavBar{
     display: flex;
     justify-content: space-evenly;
+
     background: linear-gradient(180deg, rgb(0, 0, 0), rgb(6, 6, 8));
     backdrop-filter: blur(5px);
+
     top: 0;
-    width: 100%;
+
     padding: 1rem;
+    
     height: 65px;
+
     font-size: 20px;
 }
 
 .listaNavBar li {
     color: white;
+
     background-color: transparent;
+
     list-style-type: none;
     margin-bottom: 80px;
 }
@@ -27,12 +31,8 @@ body{
 }
 
 .active-link{
-    color: rgb(255, 183, 0);
+    color: var(--oro);
     font-weight: bold;
-}
-
-.notActive-link{
-    color: white;
 }
 
 .preferitiConta{
@@ -40,18 +40,25 @@ body{
 }
 
 .heartBadge{
-    background: rgb(255, 174, 0);
-    color: #000000;  
-    font-size: 14px;
-    font-weight: 700;
-  
     position: absolute;
     bottom: 0.8rem;
     left: 0.8rem;
-   
+
+    background: var(--oro);
+    color: #000000;  
+
+    font-size: 14px;
+    font-weight: 700;
+    
     padding: 2px 6px;
 
     border-radius: 100px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.35);
 }
 
+/** Hover NavBar */
+
+.listaNavBar li a:hover {
+    color: var(--oro);
+    font-weight: bold;
+}

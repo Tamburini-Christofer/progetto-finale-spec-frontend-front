@@ -48,11 +48,9 @@ export default function Dettagli() {
   });
 
   //! Formattazione del budget e incasso, con gestione dei casi in cui i valori non sono numerici
-  const budgetFormattato = Number.isFinite(budgetValue);
-    valutaFormatter.format(budgetValue);
-  const incassoFormattato = Number.isFinite(boxOfficeValue);
-    valutaFormatter.format(boxOfficeValue);
-
+  const budgetFormattato = Number.isFinite(budgetValue) ? valutaFormatter.format(budgetValue) : "N/A";
+  const incassoFormattato = Number.isFinite(boxOfficeValue) ? valutaFormatter.format(boxOfficeValue) : "N/A";
+  
   return (
     <>
       <CardDettagli

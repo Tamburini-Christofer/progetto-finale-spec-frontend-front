@@ -1,21 +1,26 @@
+/** Card film lista film */
 .Cardfilm {
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
-  width: 500px;
-  height: 250px;
+  justify-content: center;
   gap: 20px;
 
   background-image: url("../../public/sfondoTabNovita.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+
   border: 1px solid white;
+
+  width: 500px;
+  height: 16rem;
 
   padding: 3rem;
   text-align: left;
   overflow: hidden;
+
   transition: 300ms;
 }
 
@@ -28,6 +33,7 @@
   content: "";
   position: absolute;
   inset: 0;
+
   background: rgba(0, 0, 0, 0.4);
 }
 
@@ -36,76 +42,49 @@
   z-index: 1;
 }
 
-.Cardfilm:hover {
-  cursor: pointer;
-  transition: 300ms;
-  opacity: 0.9;
-}
+/** Contenutore card film lista film */
 
 .titleCard,
 .categoryCard {
+  color: var(--oro);
+  
   font-family: "Limelight", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: rgb(255, 166, 0);
   text-shadow: 0 10px 10px rgb(0, 0, 0);
 }
 
 .titleCard div,
 .categoryCard div {
   color: white;
-  letter-spacing: 3px;
+
   font-family: "Cinzel Decorative", serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: 3px;
 }
 
 .Cardfilm div {
   display: flex;
-  width: 100%;
   justify-content: space-between;
 }
 
+/** Label preferiti */
+
 .preferitiCard {
   display: flex;
-  align-items: center;
+  
   background-color: black;
   color: white;
+
   font-weight: 600;
+  align-items: center;
+
   border: 1px solid white;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   width: 100%;
-}
-
-.preferitiCardDettagli{
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 16rem;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 1rem; 
-}
-
-.preferitiCard:hover {
-  background-color: rgba(144, 0, 0, 0.935);
-  color: rgb(237, 231, 231);
-}
-
-.preferitiCardDettagli:hover{
-  background-color: rgba(109, 39, 251, 0.935);
-  color: rgb(237, 231, 231);
-}
-
-
-.preferitiCard i {
-  margin: 0 5px 0 10px;
 }
 
 .preferitiCard span {
@@ -114,10 +93,26 @@
 }
 
 .preferitiOn {
-  background-color: rgb(255, 51, 51);
-  color: rgb(0, 0, 0);
+  background-color: var(--preferiti);
 }
 
+/** Label dettagli preferiti */
+
+.preferitiCardDettagli{
+  display: flex;
+  align-items: center;
+
+  background-color: black;
+  color: white; 
+  
+  width: 16rem;
+
+  border: 1px solid white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 1rem; 
+}
 .linkDettagli {
   text-decoration: none;
 }
@@ -126,3 +121,16 @@
   display: flex;
 }
 
+/** Hover effect */
+
+.Cardfilm:hover {
+  cursor: pointer;
+  transition: 300ms;
+  opacity: 0.9;
+}
+.preferitiCard:hover {
+  background-color: rgba(144, 0, 0, 0.935);
+}
+.preferitiCardDettagli:hover{
+  background-color: rgba(114, 46, 250, 0.935);
+}
