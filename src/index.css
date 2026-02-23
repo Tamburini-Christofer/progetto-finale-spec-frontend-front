@@ -10,15 +10,17 @@ body{
     background-color: black;
 }
 
-strong{
-    color: var(--oro);
-}
+
 
 /** Colori principali */
 
 :root {
     --oro: rgb(255, 183, 0);
     --preferiti: rgb(255, 51, 51);
+}
+
+strong{
+    color: var(--oro);
 }
 
 /** Scrollbar personalizzata */

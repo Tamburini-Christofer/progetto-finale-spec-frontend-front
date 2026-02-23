@@ -11,7 +11,6 @@ export default function Card({ films }) {
   return (
     <div className="contenitoreCard">
 
-      <div>
         <div className="BtnContainer">
 
           <button
@@ -40,9 +39,7 @@ export default function Card({ films }) {
             <button className="preferitiCardDettagli">Dettagli del film</button>
           </Link>
 
-        </div>
-      </div>
-
+      </div>/
       <div className="CardWrapper">
 
         <div className="Cardfilm">

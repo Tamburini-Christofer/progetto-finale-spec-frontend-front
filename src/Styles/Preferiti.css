@@ -69,7 +69,8 @@
 }
 
 .btnPreConf {
-  background-color: var(--oro);
+  background-color: var(--oro)
+  ;
 }
 
 .contBtnPref {

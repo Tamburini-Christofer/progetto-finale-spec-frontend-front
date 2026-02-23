@@ -44,7 +44,7 @@
     bottom: 0.8rem;
     left: 0.8rem;
 
-    background: var(--oro);
+    background-color: var(--oro);
     color: #000000;  
 
     font-size: 14px;
@@ -54,6 +54,7 @@
 
     border-radius: 100px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+    
 }
 
 /** Hover NavBar */

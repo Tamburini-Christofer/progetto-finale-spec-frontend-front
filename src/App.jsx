@@ -22,6 +22,7 @@ import "./Styles/Preferiti.css";
 import "./Styles/Novità.css";
 import "./Styles/404.css";
 import "./Styles/Dettagli.css";
+import "./Styles/Responsive.css";
 
 //! Importazione Context
 import FilmsProvider from "./Assets/context/FilmsContext";

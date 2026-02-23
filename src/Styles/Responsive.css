@@ -1,0 +1,552 @@
+@media (max-width: 1200px) {
+  .titleHome {
+    right: 5%;
+    width: min(70vw, 560px);
+  }
+
+  .titleHome h1 {
+    font-size: clamp(2.2rem, 4.8vw, 3.2rem);
+    letter-spacing: 7px;
+    line-height: 1.35;
+  }
+
+  .contenitoreFiltri {
+    padding: 1.5rem 2rem;
+  }
+
+  .formFiltri {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .formFiltri select,
+  .formFiltri input,
+  .formFiltri button,
+  .resetBtn {
+    min-width: 220px;
+  }
+
+  .contenitoreFilm {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .Cardfilm {
+    width: 360px;
+    min-width: 360px;
+    max-width: 360px;
+  }
+
+  .contTabNovità {
+    width: 62%;
+  }
+
+  .tabNovità {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .contenitoreHome {
+    position: relative;
+    min-height: calc(100vh - 65px);
+    overflow: hidden;
+  }
+
+  .contenitoreHome video {
+    display: block;
+    width: 100%;
+    min-height: calc(100vh - 65px);
+    object-fit: cover;
+  }
+
+  .contenitoreFooter {
+    position: static;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.7rem;
+    height: auto;
+    padding: 0.9rem 1rem;
+    font-size: 16px;
+  }
+
+  .linkFooter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+  }
+
+  .linkFooter li {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .iconSocial {
+    padding: 0;
+    gap: 16px;
+  }
+
+  .contenitoreFooter p {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .contenitoreLista,
+  .contenitorePreferiti,
+  .contenitoreNovità,
+  .contenitore404,
+  .contenutoDettagli {
+    height: auto;
+    min-height: calc(100vh - 65px);
+  }
+
+  .titleHome {
+    top: auto;
+    bottom: 10%;
+    right: 6%;
+    width: min(78vw, 500px);
+    z-index: 2;
+  }
+
+  .titleHome h1 {
+    text-align: right;
+    letter-spacing: 4px;
+  }
+
+  .contenitoreFiltri {
+    position: static;
+    padding: 1.25rem 1rem;
+  }
+
+  .formFiltri {
+    justify-content: center;
+  }
+
+  .formFiltri select,
+  .formFiltri input,
+  .formFiltri button,
+  .resetBtn {
+    width: min(100%, 320px);
+    min-width: 0;
+    padding: 10px 16px;
+  }
+
+  .contenitoreFilm {
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .BtnContainer {
+    width: 360px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contenitoreCard {
+    align-items: center;
+  }
+
+  .BtnContainer a,
+  .preferitiCardDettagli,
+  .preferitiCard {
+    width: 100%;
+  }
+
+  .preferitiCardDettagli {
+    justify-content: center;
+  }
+
+  .contenitoreDettagli h1 {
+    font-size: clamp(1.6rem, 5.2vw, 2.2rem);
+  }
+
+  .contenitoreDettagli,
+  .contenutoDettagli {
+    border-radius: 0;
+  }
+
+  .contenutoDettagli {
+    height: auto;
+    min-height: calc(100vh - 65px);
+  }
+
+  .overlayDettagli {
+    justify-content: flex-start;
+    padding: 30px 20px;
+  }
+
+  .testoDettagli {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metaDettagli {
+    gap: 12px;
+  }
+
+  .tabPreferiti,
+  .areaConfronto {
+    width: 100%;
+    height: auto;
+  }
+
+  .contenitorePreferiti {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .tabPreferiti {
+    margin: 0 auto;
+  }
+
+  .preferiti {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .preferiti .titleCard,
+  .preferiti .categoryCard {
+    text-align: center;
+  }
+
+  .gridConfronto {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .resetBtn {
+    position: static;
+    margin: 0.5rem auto 0;
+    display: block;
+  }
+
+  .contenitoreNovità {
+    justify-content: center;
+    background-position: top center;
+    background-size: cover;
+    padding: 1rem;
+  }
+
+  .contTabNovità {
+    width: 100%;
+  }
+
+  .tabNovità {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .imgNovità {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenitoreHome {
+    min-height: calc(100vh - 72px);
+  }
+
+  .contenitoreHome video {
+    min-height: calc(100vh - 72px);
+  }
+
+  .listaNavBar {
+    min-height: 72px;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.4rem;
+    padding: 1.1rem 1.1rem;
+    font-size: 18px;
+  }
+
+  .listaNavBar li {
+    margin-bottom: 0;
+    flex: 1;
+    text-align: center;
+  }
+
+  .listaNavBar li:last-child {
+    flex: 0 0 auto;
+    min-width: 36px;
+    text-align: right;
+  }
+
+  .heartBadge {
+    left: 0.9rem;
+    bottom: 0.75rem;
+    font-size: 12px;
+  }
+
+  .titleHome {
+    top: auto;
+    bottom: 9%;
+    right: 5%;
+    width: 90%;
+    z-index: 2;
+  }
+
+  .titleHome h1 {
+    font-size: clamp(1.6rem, 7.4vw, 2.4rem);
+    letter-spacing: 3px;
+    line-height: 1.25;
+  }
+
+  .Cardfilm {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 15rem;
+    padding: 1.5rem;
+  }
+
+  .BtnContainer {
+    width: 300px;
+  }
+
+  .titleCard div,
+  .categoryCard div {
+    letter-spacing: 1px;
+    word-break: break-word;
+  }
+
+  .contenitoreDettagliMini .contenutoDettagli,
+  .contenitoreDettagliMini .contenutoDettagli .overlayDettagli {
+    height: auto;
+    min-height: 16rem;
+    padding: 16px;
+  }
+
+  .testoDettagli {
+    grid-template-columns: 1fr;
+  }
+
+  .contenitoreDettagli h1 {
+    font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+    line-height: 1.15;
+  }
+
+  .introDettagli {
+    margin: 6px 0 12px;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .testoDettagli p {
+    margin: 0;
+  }
+
+  .metaDettagli {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0 14px;
+  }
+
+  .metaDettagli > div {
+    width: 100%;
+  }
+
+  .metaDettagli span,
+  .btnBack,
+  .btnBackOff {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+  }
+
+  .metaDettagli .btnBack,
+  .metaDettagli .btnBackOff {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 8px;
+  }
+
+  .metaDettagli .btnBack p,
+  .metaDettagli .btnBackOff p {
+    margin: 0;
+  }
+
+  .preferiti {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .contBtnPref {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .rimuovi {
+    margin-left: 0;
+  }
+
+  .tabNovità {
+    flex-direction: column;
+  }
+
+  .imgNovità {
+    max-width: 100%;
+  }
+
+  .descNovità {
+    margin-left: 0;
+  }
+
+  .empty,
+  .emptyfilms {
+    font-size: 24px;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .contenitore404 div {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+    margin: 0;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contenitoreHome {
+    min-height: calc(80vh - 100px);
+  }
+
+  .contenitoreHome video {
+    min-height: calc(89vh - 100px);
+  }
+
+  .listaNavBar {
+    min-height: 68px;
+    font-size: 16px;
+    gap: 0.2rem;
+    padding: 1rem 0.85rem;
+  }
+
+  .formFiltri {
+    gap: 0.8rem;
+  }
+
+  .titleHome {
+    top: auto;
+    bottom: 8%;
+    right: 5%;
+  }
+
+  .formFiltri select,
+  .formFiltri input,
+  .formFiltri button,
+  .resetBtn {
+    font-size: 14px;
+  }
+
+  .Cardfilm {
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    min-height: 18rem;
+    gap: 12px;
+  }
+
+  .BtnContainer {
+    width: 320px;
+  }
+
+  .overlayDettagli {
+    padding: 14px;
+    gap: 8px;
+    overflow-y: auto    ;
+  }
+
+  .contenutoDettagli {
+    min-height: calc(100vh - 68px);
+  }
+
+  .contenitoreDettagli h1 {
+    font-size: clamp(1.25rem, 7vw, 1.6rem);
+    color: rgb(255, 255, 255);
+    background-color: black;
+    text-align: center;
+  }
+
+  .metaDettagli {
+    margin: 8px auto;
+  }
+
+  .testoDettagli p {
+    padding: 9px 10px;
+  }
+
+  .introDettagli,
+  .testoDettagli p,
+  .descNovità p {
+    font-size: 0.92rem;
+  }
+
+  .tabNovità h1 {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+
+  .contenitorePreferiti {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .tabPreferiti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .preferiti {
+    width: 100%;
+    max-width: 360px;
+    padding: 16px;
+    margin: 0;
+  }
+
+  .areaConfronto {
+    width: 100%;
+    padding-bottom: 0.5rem;
+  }
+
+  .gridConfronto {
+    gap: 0.75rem;
+  }
+
+  .contenitoreDettagliMini {
+    margin: 0;
+    width: 100%;
+  }
+
+  .contenitoreDettagliMini .contenutoDettagli,
+  .contenitoreDettagliMini .overlayDettagli {
+    width: 100%;
+  }
+
+  .testoDettagliMini {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .testoDettagliMini p {
+    margin: 0;
+  }
+
+  .resetBtn {
+    width: min(100%, 360px);
+  }
+
+  .preferitiCard {
+    display: flex;
+    justify-content: center;
+  }
+
+}

@@ -71,9 +71,11 @@ export default function Preferiti() {
                   <button className={confronto.find((f) => f.title === film.title) ? "btnPref btnPreConf" : "btnPref"} onClick={() => toggleConfronto(film)}>
                     Confronta
                   </button>
+                  
                   <button className="btnPref rimuovi" onClick={() => togglePreferiti(film.title)}>
                     Rimuovi
                   </button>
+
                 </div>
               </div>
             ))}
