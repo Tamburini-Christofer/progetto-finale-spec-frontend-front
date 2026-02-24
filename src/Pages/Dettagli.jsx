@@ -1,9 +1,13 @@
-//! Importazioni dipendenze
+//! Dipendenze
 import { useParams } from "react-router-dom";
 
-//! Importazioni componenti
+//! Componenti
 import CardDettagli from "../Components/CardDettagli";
+
+//! Importazione del database films.json in backend
 import filmsDataJson from "../../progetto-finale-spec-frontend-back/database/films.json";
+
+//! Pagine
 import PaginaNotFound from "./PaginaNotFound";
 
 //! Componente Dettagli

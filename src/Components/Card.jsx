@@ -1,5 +1,8 @@
-import { usePreferiti } from "../Assets/context/PreferitiContext";
+//! Dipendenze
 import { Link } from "react-router-dom";
+
+//! Context Preferiti
+import { usePreferiti } from "../Assets/context/PreferitiContext";
 
 export default function Card({ films }) {
   const { togglePreferiti, isPreferito } = usePreferiti();

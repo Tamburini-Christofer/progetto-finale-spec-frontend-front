@@ -7,12 +7,7 @@ import Card from "../Components/Card";
 import { useFilm } from "../Assets/context/FilmsContext";
 
   //! Stato iniziale per useReducer
-  const initialState = {
-    ricerca: "",
-    ricercaDebounced: "",
-    categoria: "",
-    ordineAlfabetico: "",
-    };
+  const initialState = { ricerca: "", ricercaDebounced: "", categoria: "", ordineAlfabetico: "",};
 
     function reducer(state, action) {
   switch (action.type) {

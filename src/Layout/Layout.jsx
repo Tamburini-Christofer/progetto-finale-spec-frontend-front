@@ -1,7 +1,7 @@
-//! Importazione dipendenze
+//! Dipendenze
 import { Outlet } from "react-router-dom"
 
-//! Importazione componenti
+//! Compopnenti
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 
@@ -11,12 +11,14 @@ export default function Layout () {
         <>
             <header>
                 <nav className="contenitoreNavBar">
-                    <NavBar />
+                <NavBar />
                 </nav>
             </header>
+
             <main>
                 <Outlet />
             </main>
+            
             <footer>
                 <Footer />
             </footer>

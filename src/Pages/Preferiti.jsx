@@ -1,11 +1,11 @@
-//! Importazioni delle dipendenze
+//! Dipendenze
 import { useState } from "react";
 
-//! Importazione dei compopnenti
+//! Compopnenti
 import { usePreferiti } from "../Assets/context/PreferitiContext";
 import CardDettagli from "../Components/CardDettagli";
 
-//! Importazione del database film films.json in backend 
+//! Importazione del database films.json in backend 
 import filmsDatabase from "../../progetto-finale-spec-frontend-back/database/films.json";
 
 export default function Preferiti() {
@@ -17,13 +17,19 @@ export default function Preferiti() {
   //? Funzione per il confronto
   const toggleConfronto = (film) => {
     setConfronto((prev) => {
+
+      //todo  Controlla se il film è già presente (confronto per titolo)
       const esiste = prev.find((f) => f.title === film.title);
+
+      //todo  Se esiste, lo rimuove dalla lista di confronto
       if (esiste) return prev.filter((f) => f.title !== film.title);
 
       if (prev.length >= 4) {
         alert("Puoi confrontare massimo 4 film");
         return prev;
       }
+
+       //todo Se non esiste e c'è spazio, aggiunge il film
       return [...prev, film];
     });
   };

@@ -1,3 +1,4 @@
+//! Importazione Json file con le novità
 import novità from "../Utils/novità";
 
 export default function Novità() {

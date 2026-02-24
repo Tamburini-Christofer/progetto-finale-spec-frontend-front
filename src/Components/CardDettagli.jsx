@@ -1,22 +1,15 @@
 import { usePreferiti } from "../Assets/context/PreferitiContext";
 import { Link } from "react-router-dom";
 
-export default function CardDettagli({
-  film,
-  mini = false,
-  copertina,
-  metaTag,
-  budgetFormattato,
-  incassoFormattato,
-}) {
+export default function CardDettagli({ mini = false, film, copertina, metaTag, budgetFormattato, incassoFormattato}) {
+  
   const { togglePreferiti, isPreferito } = usePreferiti();
 
   return (
     <div className={`contenitoreDettagli ${mini ? "contenitoreDettagliMini" : ""}`}>
       <div
         className="contenutoDettagli"
-        style={copertina ? { backgroundImage: `url(${copertina})` } : undefined}
-        >
+        style={copertina ? { backgroundImage: `url(${copertina})` } : undefined}>
 
         <div className="overlayDettagli">
           <h1>{film.title}</h1>
@@ -79,9 +72,7 @@ export default function CardDettagli({
               <p><strong>Metascore:</strong> {film.metascore}</p>
               <p><strong>Paese:</strong> {film.country}</p>
               
-              {film.genre && (
-                <p><strong>Genere aggiuntivo:</strong> {film.genre}</p>
-              )}
+              <p><strong>Genere aggiuntivo:</strong> {film.genre}</p>
             </div>
           </div>
         </div>

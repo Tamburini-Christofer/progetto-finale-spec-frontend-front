@@ -12,6 +12,7 @@ export default function Homepage () {
             <div className="titleHome">
                 <h1>I 50 film da guardare prima di morire</h1>
             </div>
+            
         </div>
         </>
     )
