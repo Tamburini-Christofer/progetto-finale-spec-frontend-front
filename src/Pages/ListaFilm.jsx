@@ -115,7 +115,7 @@ import { useFilm } from "../Assets/context/FilmsContext";
 
         <div className="contenitoreFilm">
           {filtriFilms.map(film => (
-            <Card key={film.title} films={film} />
+            <Card key={film.id} films={film} />
           ))}
         </div>
 

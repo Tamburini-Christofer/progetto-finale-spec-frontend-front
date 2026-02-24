@@ -10,7 +10,18 @@ export default function FilmsProvider({ children }) {
       const res = await fetch("http://localhost:3001/filmses");
       const dataRes = await res.json();
       console.log("Tutti i film sono stati caricati correttamente", dataRes);
-      setFilms(dataRes);} 
+
+      //todo  Garantisce che ogni film abbia un id unico, necessario per Link e gestione preferiti
+
+      const filmsConId = dataRes.map((film, index) => ({
+        ...film,
+        id: film.id ?? index + 1,
+      }));
+
+      //todo 
+      
+      setFilms(filmsConId);
+    } 
     
     catch (err) {throw new Error(`Si è verificato un errore durante l'operazione ${err}`);} 
     

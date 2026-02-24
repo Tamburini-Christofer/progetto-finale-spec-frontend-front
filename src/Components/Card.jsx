@@ -11,55 +11,46 @@ export default function Card({ films }) {
   return (
     <div className="contenitoreCard">
 
-        <div className="BtnContainer">
+      <div className="BtnContainer">
 
-          <button
-            type="button"
-            className={
-              isPreferito(films.title)
-                ? "preferitiCard preferitiOn"
-                : "preferitiCard"
-            }
-            onClick={preferitiClick}
-          >
+        <button
+          type="button"
+          className={
+            isPreferito(films.title)
+              ? "preferitiCard preferitiOn"
+              : "preferitiCard"
+          }
+          onClick={preferitiClick}
+        >
+          <span>
+            {isPreferito(films.title)
+              ? "Rimuovi dai preferiti"
+              : "Aggiungi ai preferiti"}
+          </span>
+        </button>
 
-            <span>
-              {isPreferito(films.title)
-                ? "Rimuovi dai preferiti"
-                : "Aggiungi ai preferiti"}
-            </span>
+        <Link to={`/dettagli/${films.id}`}>
+          <button className="preferitiCardDettagli">Dettagli del film</button>
+        </Link>
 
-          </button>
+      </div>
 
-          <Link
-            to={`/dettagli/${encodeURIComponent(films.title)}${
-              films.id ? `?id=${films.id}` : ""
-            }`}
-          >
-            <button className="preferitiCardDettagli">Dettagli del film</button>
-          </Link>
-
-      </div>/
       <div className="CardWrapper">
 
         <div className="Cardfilm">
 
           <h2 className="titleCard">
-            Titolo:
-            <div>{films.title}</div>
+            Titolo: <span>{films.title}</span>
           </h2>
 
           <h3 className="categoryCard">
-            Categoria:
-            <div>
-              {films.category}
-            </div>
+            Categoria: <span>{films.category}</span>
           </h3>
 
         </div>
 
       </div>
-      
+
     </div>
   );
 }

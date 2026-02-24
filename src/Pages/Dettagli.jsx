@@ -4,20 +4,31 @@ import { useParams } from "react-router-dom";
 //! Importazioni componenti
 import CardDettagli from "../Components/CardDettagli";
 import filmsDataJson from "../../progetto-finale-spec-frontend-back/database/films.json";
+import PaginaNotFound from "./PaginaNotFound";
 
 //! Componente Dettagli
 export default function Dettagli() {
-  const { title } = useParams();
+  const { id } = useParams();
+  const idNumerico = Number(id);
 
-  const parametroTitolo = decodeURIComponent(title).trim().toLowerCase();
+  const filmsData = filmsDataJson.map((film, index) => ({
+    ...film,
+    id: film.id ?? index + 1,
+  }));
 
-  const film = filmsDataJson.find((f) => f.title.trim().toLowerCase() === parametroTitolo,);
+  const film = filmsData.find((f) => f.id === idNumerico);
+
+  if (!film || Number.isNaN(idNumerico)) {
+    return <PaginaNotFound />;
+  }
+
   const metaTag = [film.year, film.category, film.runtime ? `${film.runtime} min` : null];
 
   //! Variabili di supporto per formattazione e visualizzazione
   const copertina = film.linkImage;
   const budgetValue = Number(film.budget);
   const boxOfficeValue = Number(film.box_office);
+  
   const valutaFormatter = new Intl.NumberFormat("it-IT", {
     style: "currency",
     currency: "EUR",
@@ -25,8 +36,8 @@ export default function Dettagli() {
   });
 
   //! Formattazione del budget e incasso, con gestione dei casi in cui i valori non sono numerici
-  const budgetFormattato = Number.isFinite(budgetValue) ? valutaFormatter.format(budgetValue) : "N/A";
-  const incassoFormattato = Number.isFinite(boxOfficeValue) ? valutaFormatter.format(boxOfficeValue) : "N/A";
+  const budgetFormattato = valutaFormatter.format(budgetValue)
+  const incassoFormattato = valutaFormatter.format(boxOfficeValue)
   
   return (
     <>
